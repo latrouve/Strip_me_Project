@@ -94,5 +94,7 @@ def deal(deck,nbrCards,nbrPlayers):
         return dealtCards,deck
     else:
         raise Exception("Not enough cards in the deck")
+        
+        #lorne
 
     
