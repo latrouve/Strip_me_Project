@@ -94,5 +94,77 @@ def deal(deck,nbrCards,nbrPlayers):
         return dealtCards,deck
     else:
         raise Exception("Not enough cards in the deck")
+		
+def new_Queue():
+	return ("queue",[])
+	
+def is_Queue(que):
+	return type(que) == type(()) and que[0] == "queue" and type(que[1])==type([]):
+	
+def queue_Contents(que):
+	if is_Queue(que):
+		return que[1]
+	raise TypeError, "queue_Contents: arg must be a queue"
+	
+def empty_Queue(que):
+	if is_Queue(que):
+		return que == new_Queue()
+	raise TypeError, "queue_Contents: arg must be a queue"
+
+def queue_Front(que):
+	if is_Queue(que):
+		if empty_Queue(que):
+			raise TypeError, "queue_Front: empty queue"
+		return queue_Contents(que)[0]
+	raise TypeError, "empty_Queue: arg must be a queue"
+	
+def enqueue(que,el):
+	if is_Queue(que):
+		queue_Contents(que).insert(el)
+	raise TypeError, "empty_Queue: arg must be a queue"
+	
+def dequeue(que):
+	if is_Queue(que):
+		if empty_Queue(que):
+			raise TypeError, "queue_Front: empty queue"
+		queue_Contents(que).dequeue(0)
+	raise TypeError, "empty_Queue: arg must be a queue"
+
+def new_Stack():
+	return("stack",[])
+	
+def is_Stack(sta):
+	return type(sta)==type(()) and sta[0]=="stack"
+	
+def stack_Contents(sta):
+	if is_Stack(sta):
+		return sta[1]
+	raise TypeError, "stack_Contents: arg must be a stack"
+	
+def empty_Stack(sta):
+	if is_Stack(sta):
+		return sta==new_stack()
+	raise TypeError, "stack_Contents: arg must be a stack"
+
+def stack_Top(sta):
+	if is_Stack(sta):
+		if empty_Stack(sta)
+			raise TypeError, "stack_Contents: stack empty"
+		return stack_Contents(sta)[0]
+	raise TypeError, "stack_Contents: arg must be a stack"
+	
+	
+def push(sta,el):
+	if is_Stack(sta):
+		contents(sta).insert(0, el)
+	raise TypeError, "stack_Contents: arg must be a stack"
+	
+def pop(sta):
+	if is_Stack(sta):
+		if empty_Stack(sta)
+			raise TypeError, "stack_Contents: stack empty"
+		stack_Contents(sta).pop(0)
+	raise TypeError, "stack_Contents: arg must be a stack"
+			
 
     
