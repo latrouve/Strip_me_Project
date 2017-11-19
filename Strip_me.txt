@@ -95,9 +95,4 @@ def deal(deck,nbrCards,nbrPlayers):
     else:
         raise Exception("Not enough cards in the deck")
 
-def new_Queue():
-    return ("q",[])
-def is_Queue (n):
-    return n[0]=='q'
-def queue_Contents ():
     
